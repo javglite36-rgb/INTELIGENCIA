@@ -7,7 +7,7 @@ description: "Crea nuevas skills de Claude Code desde cero. Es la skill que hace
 
 Le describes un proceso que quieres automatizar y Claude genera una skill completa lista para usar. Es la herramienta que crea herramientas.
 
-Las skills de Claude Code son archivos `.md` que le enseñan a Claude a hacer tareas específicas. Cualquier proceso que hagas de forma repetitiva puede convertirse en una skill.
+Las skills de Claude Code son carpetas con un archivo `SKILL.md` dentro que le enseñan a Claude a hacer tareas específicas. Cualquier proceso que hagas de forma repetitiva puede convertirse en una skill.
 
 ---
 
@@ -89,7 +89,7 @@ Estos principios son los que hacen que una skill sea realmente buena:
 
 ## Paso 3 — Escribir la skill
 
-Genera el archivo `.md` con esta estructura:
+Genera el archivo `SKILL.md` (dentro de una carpeta con el nombre de la skill) con esta estructura:
 
 ```markdown
 ---
@@ -162,15 +162,15 @@ Una línea describiendo qué hace en lenguaje simple.
 Después de generarla, instálala automáticamente:
 
 ```bash
-mkdir -p .claude/skills
-cp [nombre-skill].md .claude/skills/
+mkdir -p .claude/skills/[nombre-skill]
+cp SKILL.md .claude/skills/[nombre-skill]/SKILL.md
 ```
 
 Si el usuario quiere que la skill esté disponible en todos sus proyectos (no solo en esta carpeta):
 
 ```bash
-mkdir -p ~/.claude/skills
-cp [nombre-skill].md ~/.claude/skills/
+mkdir -p ~/.claude/skills/[nombre-skill]
+cp SKILL.md ~/.claude/skills/[nombre-skill]/SKILL.md
 ```
 
 ---
@@ -185,7 +185,7 @@ kit-[nombre]/
 ├── INSTRUCCIONES.md             ← Guía paso a paso para instalar y usar
 ├── .claude/
 │   └── skills/
-│       └── [nombre].md          ← La skill
+│       └── [nombre]/SKILL.md    ← La skill
 └── [carpetas extra si necesita] ← assets/, facturas/, etc.
 ```
 

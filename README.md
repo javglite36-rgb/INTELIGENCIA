@@ -20,3 +20,17 @@ Cada kit trae su propio `EMPIEZA-AQUI.md` y `README.md`.
 
 > **n8n:** en `skills-adri-y-juanpe/kit-automatizaciones-n8n/.mcp.json` hay que poner tu URL
 > y tu API key de n8n (vienen con valores de ejemplo).
+
+## Instalar las 10 skills en tu ordenador (para usarlas en cualquier carpeta)
+
+1. Descarga el repo (botón verde **Code → Download ZIP** en GitHub) y descomprímelo.
+2. Abre **PowerShell** dentro de la carpeta descomprimida y pega:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
+Get-ChildItem "skills-adri-y-juanpe\*\.claude\skills\*" -Directory | Copy-Item -Destination "$HOME\.claude\skills" -Recurse -Force
+```
+
+3. Cierra y vuelve a abrir Claude Code. Escribe `/` y verás las skills en la lista.
+
+(En Mac/Linux: `mkdir -p ~/.claude/skills && cp -r skills-adri-y-juanpe/*/.claude/skills/* ~/.claude/skills/`)
