@@ -1,0 +1,2 @@
+# INTELIGENCIA
+skills varias
