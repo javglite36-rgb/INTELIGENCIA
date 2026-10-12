@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "n8n": {
+      "command": "npx",
+      "args": ["-y", "n8n-mcp"],
+      "env": {
+        "N8N_API_URL": "https://TU-INSTANCIA-N8N/api/v1",
+        "N8N_API_KEY": "PEGA_AQUI_TU_API_KEY_DE_N8N",
+        "N8N_WEBHOOK_URL": "https://TU-INSTANCIA-N8N"
+      }
+    }
+  }
+}
